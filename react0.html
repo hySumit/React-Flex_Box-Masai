@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script src="https://www.unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+    <script type="text/babel">
+
+        let root = document.getElementById("root")
+
+        let rootElement = ReactDOM.createRoot(root);
+
+
+        let props = {
+            border: `2px solid black`,
+            display:`flex`,
+            fontSize:'30px',
+            color:`black`,
+            backgroundColor:`#FFE4C4`,
+            justifyContent:`center`,
+            gap:`20px`,
+            padding:`20px`
+
+        }
+
+        let parent = {
+            position: `absolute`,
+            left:`15px`,
+            top:`-20px`
+        }
+
+        let child1 = {
+            color:`black`,
+            backgroundColor:`red`,
+            border:`2px solid black`,
+            height:`100px`,
+            width:`100px`
+        }
+        let child2 = {
+            color:`black`,
+            backgroundColor:`yellow`,
+            border:`2px solid black`,
+            height:`100px`,
+            width:`100px`
+        }
+        let child3 = {
+            color:`black`,
+            backgroundColor:`green`,
+            border:`2px solid black`,
+            height:`100px`,
+            width:`100px`
+        }
+
+        let chidl4 = {
+            color:`black`,
+            backgroundColor:`purple`,
+            border:`2px solid black`,
+            height:`100px`,
+            width:`100px`
+        }
+
+
+        let flex = React.createElement("div", { id: "parent", style:props}, [
+            React.createElement("p",{style:parent},"parent"),
+            React.createElement("div", {style:child1}, "1"),
+            React.createElement("div", {style:child2}, "2"),
+            React.createElement("div", {style:child3}, "3"),
+            React.createElement("div", {style:chidl4}, "4")
+        ])
+        rootElement.render(flex)
+
+
+    </script>
+</body>
+
+</html>
